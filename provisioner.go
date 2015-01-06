@@ -113,7 +113,7 @@ func (p *Provisioner) Provision(ui packer.Ui, comm packer.Communicator) error {
   }
   
   // p.config.PackerBuilderType
-  executeCommand := "VBoxManage storageattach '{{.BuildName}}' --storagectl 'IDE controller' --port 1 --device 0 --type dvddrive --medium '{{.Source}}'"
+  executeCommand := "VBoxManage storageattach '{{.BuildName}}' --storagectl 'IDE Controller' --port 1 --device 0 --type dvddrive --medium '{{.Source}}'"
 
   command, err := p.config.tpl.Process(executeCommand,  &ExecuteTemplate{
     BuildName: p.config.PackerBuildName,
